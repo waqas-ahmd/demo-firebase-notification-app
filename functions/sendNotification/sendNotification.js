@@ -4,7 +4,7 @@ var serviceAccount = {
   type: "service_account",
   project_id: "custom-notification-app",
   private_key_id: process.env.PRIVATE_KEY_ID,
-  private_key: process.env.PRIVATE_KEY,
+  private_key: process.env.PRIVATE_KEY.replace(/\\n/gm, "\n"),
   client_email:
     "firebase-adminsdk-usgkj@custom-notification-app.iam.gserviceaccount.com",
   client_id: "106371842359218757591",
@@ -38,10 +38,6 @@ const handler = async (event) => {
     .send(message)
     .then((response) => {
       console.log("Successfully sent message:", response);
-      return {
-        statusCode: 200,
-        body: JSON.stringify({ message: response }),
-      };
     })
     .catch((error) => {
       console.log("Error sending message:", error);
