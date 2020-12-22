@@ -15,12 +15,12 @@ var serviceAccount = {
     "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-usgkj%40custom-notification-app.iam.gserviceaccount.com",
 };
 
-console.log(serviceAccount.private_key);
-
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });
+
+  console.log("App is Created SuccessFully");
 }
 
 const handler = async (event) => {
