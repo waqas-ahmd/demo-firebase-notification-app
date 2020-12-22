@@ -24,7 +24,8 @@ if (!admin.apps.length) {
 }
 
 const handler = async (event) => {
-  var registrationToken = JSON.parse(event.body).token;
+  var registrationToken =
+    "cdL4hiF-89riVJ7ydSNcYm:APA91bEzFSOXv1yL9vkTBBWQvO0Wa_jRLWFL0fb06DgNrZ8Ug5Lsguhf0ldd3xZvwxTBCTx_yNIXj9uzKbMaY4EhpM7GN2pNMlDedZ-353L43KDHbkadmKrie87MnFDAqc2_T00jzcGg";
   var message = {
     data: {
       score: "850",
